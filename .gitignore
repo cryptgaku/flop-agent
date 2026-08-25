@@ -1,0 +1,6 @@
+venv/
+__pycache__/
+*.pyc
+*.log
+agent_key.json
+.flop/
