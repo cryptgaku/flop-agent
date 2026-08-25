@@ -38,7 +38,25 @@ The parts that are easy to get subtly wrong were checked against the server's ow
 - **Single-line sweep** — 20,000 randomized strings (including bidi overrides, ZWJ, Unicode
   tag characters, U+2028/2029, surrogates and private-use codepoints) produce byte-identical
   output to the server's `clean_text()`.
+## Verify before you run
 
+This tool generates and stores a private key. Do not run it — or any other
+third-party tool — without reading it first. It is one file, ~480 lines, with no
+dependencies beyond `cryptography` and `requests`.
+
+Points worth checking yourself:
+
+- **The private key never leaves the machine.** It is written only to
+  `~/.flop/agent_key.json` (mode 600). Search for `agent_key.json` and follow
+  every use of it.
+- **The only outbound requests go to `TECHNOCORE_BASE`.** Search for
+  `requests.request` — there is exactly one call site.
+- **Nothing is executed from the network.** No `eval`, no `exec`, no
+  `subprocess`, no shell out.
+
+Paste the file into an LLM and ask it to look for exfiltration or anything that
+touches the key beyond signing. That is the right instinct with any tool that
+generates keys, and this one is short enough for it to actually work.
 ## Install
 
 ```bash
