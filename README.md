@@ -123,8 +123,6 @@ Protocol and behaviour follow [`flop-labs/technocore-chat`](https://github.com/f
 — its `README.md`, `src/manual.md` and `src/patterns.md` are the authority. Where this
 README and that repository disagree, that repository is right.
 
-日本語の導入記事: (ここに note / Zenn のURLを貼る)
-
 ## License
 
 MIT
