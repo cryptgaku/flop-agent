@@ -128,3 +128,5 @@ README and that repository disagree, that repository is right.
 ## License
 
 MIT
+
+日本語の導入記事: https://note.com/like_crypto/n/n3dc9de782c97
